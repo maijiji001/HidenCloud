@@ -229,6 +229,7 @@ def main():
             driver.click("button[type='submit']")
             a = take_screenshot(driver, "06-login-submitted")
             send_tg_notification("submit", photo_path=a)
+            
             print("[INFO] ⏳ 等待登录跳转...")
             if not wait_for_url_contains(driver, "/dashboard", timeout=45):
                 error_text = check_login_error(driver)
